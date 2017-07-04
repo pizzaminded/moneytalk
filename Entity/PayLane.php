@@ -52,10 +52,16 @@ class PayLane implements MoneyTalkableInterface
     protected $hash;
 
     /**
-     * @ORM\Column(type="integer", name="id_sale")
+     * @ORM\Column(type="integer", name="id_sale", nullable=true)
      * @var int
      */
     protected $idSale;
+
+    /**
+     * @ORM\Column(type="integer", name="id_error", nullable=true)
+     * @var int
+     */
+    protected $idError;
 
     /**
      * @return string
@@ -150,7 +156,7 @@ class PayLane implements MoneyTalkableInterface
     /**
      * @return int
      */
-    public function getIdSale(): int
+    public function getIdSale()
     {
         return $this->idSale;
     }
@@ -164,6 +170,24 @@ class PayLane implements MoneyTalkableInterface
         $this->idSale = $idSale;
         return $this;
     }
+
+    /**
+     * @return int
+     */
+    public function getIdError()
+    {
+        return $this->idError;
+    }
+
+    /**
+     * @param int $idError
+     */
+    public function setIdError(int $idError)
+    {
+        $this->idError = $idError;
+    }
+
+
 
     /**
      * Get id
@@ -180,7 +204,7 @@ class PayLane implements MoneyTalkableInterface
      */
     public function getPaymentStatus(): int
     {
-        if($this->status === 'CLEARED') {
+        if(strtoupper($this->status) === 'CLEARED') {
             return Payment::STATUS_CLEARED;
         }
 
