@@ -9,6 +9,7 @@ use pizzaminded\MoneyTalkBundle\MoneyTalkableInterface;
 /**
  * @ORM\Entity(repositoryClass="pizzaminded\PizzaCMSBundle\Repository\ArticleRepository")
  * @ORM\Table(name="moneytalk_paylane_webhook")
+ * @author pizzaminded <github.com/pizzaminded>
  */
 class PayLane implements MoneyTalkableInterface
 {
@@ -19,7 +20,6 @@ class PayLane implements MoneyTalkableInterface
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
 
     /**
      * @ORM\Column(type="string", name="status")
@@ -154,7 +154,7 @@ class PayLane implements MoneyTalkableInterface
     }
 
     /**
-     * @return int
+     * @return int|null
      */
     public function getIdSale()
     {
@@ -165,14 +165,14 @@ class PayLane implements MoneyTalkableInterface
      * @param int $idSale
      * @return PayLane
      */
-    public function setIdSale(int $idSale): PayLane
+    public function setIdSale($idSale): PayLane
     {
         $this->idSale = $idSale;
         return $this;
     }
 
     /**
-     * @return int
+     * @return int|null
      */
     public function getIdError()
     {
@@ -182,12 +182,10 @@ class PayLane implements MoneyTalkableInterface
     /**
      * @param int $idError
      */
-    public function setIdError(int $idError)
+    public function setIdError($idError)
     {
         $this->idError = $idError;
     }
-
-
 
     /**
      * Get id
@@ -206,6 +204,10 @@ class PayLane implements MoneyTalkableInterface
     {
         if(strtoupper($this->status) === 'CLEARED') {
             return Payment::STATUS_CLEARED;
+        }
+
+        if(strtoupper($this->status) === 'ERROR') {
+            return Payment::STATUS_ERROR;
         }
 
         return Payment::STATUS_PENDING;
