@@ -2,8 +2,9 @@
 
 namespace pizzaminded\MoneyTalkBundle\Webhook;
 
-use pizzaminded\MoneytalkBundle\Entity\PayLane;
-use pizzaminded\MoneytalkBundle\MoneytalkableInterface;
+use pizzaminded\MoneyTalkBundle\Entity\PayLane;
+use pizzaminded\MoneyTalkBundle\MoneyTalkableInterface;
+use pizzaminded\MoneyTalkBundle\Payment\PaymentProcessor;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -44,6 +45,8 @@ class PayLaneWebhook implements WebhookInterface
     {
         $this->request = $request;
 
+
+
         return $this;
     }
 
@@ -64,5 +67,13 @@ class PayLaneWebhook implements WebhookInterface
     public function getEntity(): MoneytalkableInterface
     {
         return $this->entity;
+    }
+
+    /**
+     * @return PaymentProcessor
+     */
+    public function getPaymentProcessor(): PaymentProcessor
+    {
+        // TODO: Implement getPaymentProcessor() method.
     }
 }

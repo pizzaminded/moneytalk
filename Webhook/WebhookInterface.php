@@ -2,9 +2,8 @@
 
 namespace pizzaminded\MoneyTalkBundle\Webhook;
 
-
 use pizzaminded\MoneytalkBundle\MoneytalkableInterface;
-
+use pizzaminded\MoneytalkBundle\Payment\PaymentProcessor;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -26,9 +25,13 @@ interface WebhookInterface
      */
     public function parseRequest(Request $request);
 
-
     /**
      * @return MoneytalkableInterface
      */
     public function getEntity(): MoneytalkableInterface;
+
+    /**
+     * @return PaymentProcessor
+     */
+    public function getPaymentProcessor(): PaymentProcessor;
 }

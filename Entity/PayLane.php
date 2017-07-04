@@ -1,16 +1,16 @@
 <?php
 
-namespace pizzaminded\MoneytalkBundle\Entity;
+namespace pizzaminded\MoneyTalkBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use pizzaminded\MoneyTalkBundle\Payment\Payment;
-use pizzaminded\MoneytalkBundle\MoneytalkableInterface;
+use pizzaminded\MoneyTalkBundle\MoneyTalkableInterface;
 
 /**
  * @ORM\Entity(repositoryClass="pizzaminded\PizzaCMSBundle\Repository\ArticleRepository")
  * @ORM\Table(name="moneytalk_paylane_webhook")
  */
-class PayLane implements MoneytalkableInterface
+class PayLane implements MoneyTalkableInterface
 {
     /**
      * @var int

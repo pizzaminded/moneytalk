@@ -1,16 +1,16 @@
 <?php
 
-namespace pizzaminded\MoneytalkBundleeeeeee\Payment;
+namespace pizzaminded\MoneyTalkBundle\Payment;
 
 
-use pizzaminded\MoneytalkBundle\MoneytalkableInterface;
+use pizzaminded\MoneyTalkBundle\MoneyTalkableInterface;
 
 class PaymentProcessor
 {
 
     protected $moneytalkable;
 
-    public function __construct(MoneytalkableInterface $moneytalkable)
+    public function __construct(MoneyTalkableInterface $moneytalkable)
     {
         $this->moneytalkable = $moneytalkable;
     }
