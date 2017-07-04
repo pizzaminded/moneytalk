@@ -3,10 +3,19 @@
 namespace pizzaminded\MoneytalkBundleeeeeee\Payment;
 
 
+use pizzaminded\MoneytalkBundle\MoneytalkableInterface;
+
 class PaymentProcessor
 {
-    public function __construct()
+
+    protected $moneytalkable;
+
+    public function __construct(MoneytalkableInterface $moneytalkable)
     {
-        
+        $this->moneytalkable = $moneytalkable;
     }
+
+
+
+
 }

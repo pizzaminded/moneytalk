@@ -4,13 +4,13 @@ namespace pizzaminded\MoneytalkBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use pizzaminded\MoneyTalkBundle\Payment\Payment;
-use pizzaminded\MoneytalkBundleeeeeee\MoneytalkableInterface;
+use pizzaminded\MoneytalkBundle\MoneytalkableInterface;
 
 /**
  * @ORM\Entity(repositoryClass="pizzaminded\PizzaCMSBundle\Repository\ArticleRepository")
  * @ORM\Table(name="moneytalk_paylane_webhook")
  */
-class Paylane implements MoneytalkableInterface
+class PayLane implements MoneytalkableInterface
 {
     /**
      * @var int
@@ -67,9 +67,9 @@ class Paylane implements MoneytalkableInterface
 
     /**
      * @param string $status
-     * @return Paylane
+     * @return PayLane
      */
-    public function setStatus(string $status): Paylane
+    public function setStatus(string $status): PayLane
     {
         $this->status = $status;
         return $this;
@@ -85,9 +85,9 @@ class Paylane implements MoneytalkableInterface
 
     /**
      * @param float $amount
-     * @return Paylane
+     * @return PayLane
      */
-    public function setAmount(float $amount): Paylane
+    public function setAmount(float $amount): PayLane
     {
         $this->amount = $amount;
         return $this;
@@ -103,9 +103,9 @@ class Paylane implements MoneytalkableInterface
 
     /**
      * @param string $currency
-     * @return Paylane
+     * @return PayLane
      */
-    public function setCurrency(string $currency): Paylane
+    public function setCurrency(string $currency): PayLane
     {
         $this->currency = $currency;
         return $this;
@@ -121,9 +121,9 @@ class Paylane implements MoneytalkableInterface
 
     /**
      * @param string $description
-     * @return Paylane
+     * @return PayLane
      */
-    public function setDescription(string $description): Paylane
+    public function setDescription(string $description): PayLane
     {
         $this->description = $description;
         return $this;
@@ -139,9 +139,9 @@ class Paylane implements MoneytalkableInterface
 
     /**
      * @param string $hash
-     * @return Paylane
+     * @return PayLane
      */
-    public function setHash(string $hash): Paylane
+    public function setHash(string $hash): PayLane
     {
         $this->hash = $hash;
         return $this;
@@ -157,9 +157,9 @@ class Paylane implements MoneytalkableInterface
 
     /**
      * @param int $idSale
-     * @return Paylane
+     * @return PayLane
      */
-    public function setIdSale(int $idSale): Paylane
+    public function setIdSale(int $idSale): PayLane
     {
         $this->idSale = $idSale;
         return $this;
