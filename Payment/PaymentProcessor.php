@@ -2,6 +2,7 @@
 
 namespace pizzaminded\MoneyTalkBundle\Payment;
 
+use Doctrine\ORM\EntityManager;
 use pizzaminded\MoneyTalkBundle\MoneyTalkableInterface;
 
 /**
@@ -18,12 +19,24 @@ class PaymentProcessor
     protected $moneytalkable;
 
     /**
-     * PaymentProcessor constructor.
-     * @param MoneyTalkableInterface $moneytalkable
+     * @var EntityManager
      */
-    public function __construct(MoneyTalkableInterface $moneytalkable)
+    protected $em;
+
+    /**
+     * PaymentProcessor constructor.
+     * @param EntityManager $em
+     */
+    public function __construct(EntityManager $em)
     {
-        $this->moneytalkable = $moneytalkable;
+//        $this->moneytalkable = $moneytalkable;
+        $this->em = $em;
+    }
+
+    public function setEntity(MoneyTalkableInterface $moneyTalkable)
+    {
+        $this->moneytalkable = $moneyTalkable;
+        return $this;
     }
 
     /**
@@ -56,6 +69,14 @@ class PaymentProcessor
     public function getEntity(): MoneyTalkableInterface
     {
         return $this->moneytalkable;
+    }
+
+    public function saveEntity()
+    {
+        $this->em->persist($this->moneytalkable);
+        $this->em->flush();
+
+        return $this;
     }
 
 }

@@ -2,6 +2,7 @@
 
 namespace pizzaminded\MoneyTalkBundle\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use pizzaminded\MoneyTalkBundle\Payment\Payment;
 use pizzaminded\MoneyTalkBundle\MoneyTalkableInterface;
@@ -63,6 +64,17 @@ class PayLane implements MoneyTalkableInterface
      */
     protected $idError;
 
+    /**
+     * @ORM\Column(type="datetime", name="date")
+     * @var int
+     */
+    protected $date;
+
+
+    public function __construct()
+    {
+        $this->date = new DateTime();
+    }
     /**
      * @return string
      */
