@@ -8,7 +8,7 @@ use pizzaminded\MoneyTalkBundle\Payment\Payment;
 use pizzaminded\MoneyTalkBundle\MoneyTalkableInterface;
 
 /**
- * @ORM\Entity(repositoryClass="pizzaminded\PizzaCMSBundle\Repository\ArticleRepository")
+ * @ORM\Entity(repositoryClass="")
  * @ORM\Table(name="moneytalk_paylane_webhook")
  * @author pizzaminded <github.com/pizzaminded>
  */
