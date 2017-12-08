@@ -1,6 +1,6 @@
 <?php
 
-namespace pizzaminded\MoneyTalkBundle\Webhook;
+namespace pizzaminded\MoneyTalk\Webhook;
 
 use pizzaminded\MoneyTalkBundle\Entity\PayLane;
 use pizzaminded\MoneyTalkBundle\Exception\ParserException;

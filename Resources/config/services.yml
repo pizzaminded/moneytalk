@@ -1,4 +1,0 @@
-services:
-    pizzaminded.moneytalk.processor:
-        class: pizzaminded\MoneyTalkBundle\Payment\PaymentProcessor
-        arguments: ["@doctrine.orm.default_entity_manager"]

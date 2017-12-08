@@ -1,13 +1,13 @@
 <?php
 
-namespace pizzaminded\MoneyTalkBundle\Payment;
+namespace pizzaminded\MoneyTalk\Payment;
 
 use Doctrine\ORM\EntityManager;
 use pizzaminded\MoneyTalkBundle\MoneyTalkableInterface;
 
 /**
  * Class PaymentProcessor
- * @package pizzaminded\MoneyTalkBundle\Payment
+ * @package pizzaminded\MoneyTalk\Payment
  * @author pizzaminded <github.com/pizzaminded>
  */
 class PaymentProcessor

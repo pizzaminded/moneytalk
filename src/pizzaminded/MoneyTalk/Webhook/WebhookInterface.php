@@ -1,6 +1,6 @@
 <?php
 
-namespace pizzaminded\MoneyTalkBundle\Webhook;
+namespace pizzaminded\MoneyTalk\Webhook;
 
 use pizzaminded\MoneytalkBundle\MoneytalkableInterface;
 use pizzaminded\MoneytalkBundle\Payment\PaymentProcessor;

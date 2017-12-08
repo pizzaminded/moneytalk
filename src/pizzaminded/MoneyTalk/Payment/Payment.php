@@ -1,6 +1,6 @@
 <?php
 
-namespace pizzaminded\MoneyTalkBundle\Payment;
+namespace pizzaminded\MoneyTalk\Payment;
 
 
 /**

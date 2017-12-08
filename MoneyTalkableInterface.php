@@ -1,11 +1,18 @@
 <?php
 
+namespace pizzaminded\MoneyTalk;
 
-namespace pizzaminded\MoneyTalkBundle;
 
-
+/**
+ * Interface MoneyTalkableInterface
+ * @package pizzaminded\MoneyTalk
+ * @author pizzaminded <miki@appvende.net>
+ */
 interface MoneyTalkableInterface
 {
+    /**
+     * @return mixed
+     */
     public function getPaymentStatus();
 
 }
